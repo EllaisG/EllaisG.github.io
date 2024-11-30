@@ -1,1 +1,0 @@
-démarrer le serveur dans le dossier: http-server -p 8000
