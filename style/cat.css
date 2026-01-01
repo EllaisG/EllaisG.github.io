@@ -1,0 +1,122 @@
+.cat * {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cat, .head, .ears, .eyes, .muzzle, .body, .paw, .tail, .tail-segment {position: relative;}
+.head, .body, .paw, .tail-segment {background-color: #000000;}
+.left {float: left;}
+.right {float: right;}
+.cat {
+  margin-top: 50px;
+  margin-bottom: -95px; /* Ajoute cette ligne - fait descendre le chat dans l'intro */
+  z-index: 10; /* Assure que le chat reste visible au-dessus */
+  position: relative; /* Nécessaire pour que z-index fonctionne */
+}
+.head {
+  width: 100px;
+  height: 90px;
+  border-radius: 50%;
+  z-index: 10;
+  animation: head-bob 10s infinite ease-in-out;
+}
+.ears {
+  top: -20px;
+  z-index: 5;
+}
+.ear {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #000000;
+}
+.ear.left {
+  transform: rotate(-20deg) translateX(-10px);
+}
+.ear.right {
+  transform: rotate(20deg) translateX(10px);
+}
+.eyes {
+  top: -18px;
+  width: 60%;
+}
+.eye {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #FFD700;
+  animation: eye-blink 5s infinite;
+  text-align: center;
+}
+
+.muzzle {
+  top: 50px;
+}
+.nose {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #666666;
+}
+.body {
+  width: 200px;
+  height: 120px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  top: -75px;
+  left: 90px;
+  z-index: 1;
+}
+.paw {
+  height: 30px;
+  width: 50px;
+  border-radius: 25px;
+  left: -100px;
+  top: 90px;
+}
+.tail {
+  left: 180px;
+  top: -100px;
+  transform: rotate(90deg);
+  
+}
+
+.tail-segment {
+  height: 20px;
+  width: 30px;
+  border-radius: 25px;
+  top: 0px;
+  left: 10px;
+  /*transform: rotate(10deg);*/
+  animation: tail-swish 5s infinite cubic-bezier(.8,0,.2,1);
+}
+
+@keyframes tail-swish {
+  0% {transform: rotate(12deg);}
+  10% {transform: rotate(12deg);}
+  40% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+  60% {transform: rotate(-5deg);}
+  100% {transform: rotate(12deg);}
+}
+
+@keyframes head-bob {
+  0% {transform: translateX(-15px) translateY(45px);}   /* Tête en bas */
+  80% {transform: translateX(-15px) translateY(45px);}  /* Reste en bas longtemps */
+  85% {transform: translateX(0) translateY(0);}         /* Lève la tête rapidement */
+  95% {transform: translateX(0) translateY(0);}         /* Garde la tête levée un peu */
+  100% {transform: translateX(-15px) translateY(45px);} /* Redescend */
+}
+
+@keyframes eye-blink {
+  0% {transform: scaleY(1);}
+  13% {transform: scaleY(1);}
+  15% {transform: scaleY(0);}
+  17% {transform: scaleY(1);}
+  50% {transform: scaleY(1);}
+  90% {transform: scaleY(1);}
+  95% {transform: scaleY(0);} 
+  100% {transform: scaleY(1);}  
+}

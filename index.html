@@ -4,91 +4,141 @@
         <meta charset="UTF-8">
         <title>Ellaïs Garcia</title>
         <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/cat.css">
         <link rel="icon" type="image/x-icon" href="document/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="script/site.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header>
+        <header id="accueil">
             <nav>
                 <ul id="header-links">
                     <li><a href="">Accueil</a></li>
+                    <li><a href="#projet">Projet</a></li>
                     <li><a href="#contact">Contact</a></li>
-                </ul>
-    
-                <ul id="header-buttons">
-                    <li>
-                        <a href="https://www.linkedin.com/in/ella%C3%AFs-garcia-43b602291/" target="_blank" title="Mon LinkedIn">
-                            <img src="document/linkedin.png" alt="Logo LinkedIn" class="lien-logo">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://gitlab.com/ellais.garcia.bzh" target="_blank" title="Mon LinkedIn">
-                            <img src="document/gitlab.png" alt="Logo Gitlab" class="lien-logo">
-                        </a>
-                    </li>
-                    <li><a href="#cv">Mon CV</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <div class="timeline-container">
-                <!-- Flèche gauche -->
-                <button class="arrow left-arrow" onclick="updateTimeline(-1)">&#9664;</button>                
-                
-                <!-- Timeline -->
-                <div class="timeline">
-                    <!-- Événement 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Novembre 2023</h3>
-                        <p>Jeu de Wythoff</p>
+            <div class="cat">
+                <div class="head">
+                <div class="ears">
+                    <div class="ear left"></div>
+                    <div class="ear right"></div>
+                </div>
+                <div class="eyes">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                </div>
+                <div class="muzzle">
+                    <div class="nose"></div>
+                </div>
+                </div>
+                <div class="body">
+                <div class="paw"></div>
+                </div>
+                <div class="tail">
+                <div class="tail-segment">
+                    <div class="tail-segment">
+                    <div class="tail-segment">
+                        <div class="tail-segment">
+                        <div class="tail-segment">
+                            <div class="tail-segment">
+                            <div class="tail-segment">
+                                <div class="tail-segment">
+                                <div class="tail-segment">
+                                    <div class="tail-segment">
+                                    <div class="tail-segment">
+                                        <div class="tail-segment">
+                                        <div class="tail-segment">
+                                            <div class="tail-segment">
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    <!-- Événement 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Octobre 2023 & Octobre 2024</h3>
-                        <p>SportTrack</p>
-                        </div>
                     </div>
-                    <!-- Événement 3 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Janvier-Juin 2024</h3>
-                        <p>Commune Bretonne</p>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="introduction">
+                <h1>Bonjour, moi c'est Ellaïs!</h1>
+            </div>
+
+            <div class="presentation-wrapper" id="projet">
+                <div class="presentation">
+                    <h1>Présentation</h1>
+                    <p>Ma vocation pour le développement est née lors d’un stage de découverte en informatique.
+                        Depuis, j’ai choisi l’informatique sans hésiter. Après un baccalauréat général, où j'ai commencé à coder en Python, j’ai suivi un BUT Informatique où 
+                        J’ai exploré le développement (Java, Python, web), les bases de données (PostgreSQL, Oracle, MongoDB) et les tests (JUnit, Spring Boot Test).
+                        Cela m'a permis d'être polyvalente sur les différents domaines et de pouvoir mener à bien des projets.
+                        À ce jour, je suis désormais étudiante ingénieur en informatique à L'ESIR.
+                    </p>
+                </div>
+                <div class="logo-3d">
+                    <img src="document/logo_sans_fond.png" alt="Logo" class="spinning-disk">
+                </div>
+            </div>
+
+            <div class="projet">
+                <h1>Mes Projets</h1>
+                <div class="projet-container">
+                    <div class="mosaic">
+                        <div class="project-card" data-project="wythoff">
+                            <h3>Jeu de Wythoff</h3>
+                            <span class="date">Nov 2023</span>
                         </div>
-                    </div>
-                    <!-- Événement 4 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Septembre 2024 - Janvier 2025</h3>
-                        <p>Building Devis</p>
+                        <div class="project-card" data-project="sporttrack">
+                            <h3>SportTrack</h3>
+                            <span class="date">Oct 2023-2024</span>
                         </div>
-                    </div>
-                    <!-- Événement 5 -->
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                        <h3>Novembre 2024</h3>
-                        <p>Lancement de mon projet de portfolio personnel.</p>
+                        <div class="project-card" data-project="commune">
+                            <h3>Commune Bretonne</h3>
+                            <span class="date">Jan-Juin 2024</span>
+                        </div>
+                        <div class="project-card" data-project="building">
+                            <h3>Building Devis</h3>
+                            <span class="date">Sep 2024-Jan 2025</span>
+                        </div>
+                        <div class="project-card" data-project="portfolio">
+                            <h3>Portfolio</h3>
+                            <span class="date">Nov 2024</span>
                         </div>
                     </div>
                 </div>
-            
-                <!-- Flèche droite -->
-                <button class="arrow right-arrow" onclick="updateTimeline(1)">&#9654;</button>
             </div>
 
-            <!-- Section pour afficher les détails -->
-
-            <div id="event-details-container" class="details">
-                <img src="document/favicon.png" alt="Image de l'événement">
-                <div id="event-details" class="details-text">
+            <!-- Modal pour les détails -->
+            <div id="project-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="modal-body"></div>
                 </div>
             </div>
-            
 
-            <div id="cv" class="affichage-cv">
-                <embed src="document/CV_Ellaïs GARCIA.pdf" width="800" height="500" type="application/pdf"/>
+            <!-- Pattes de chat qui marchent -->
+            <div class="paw-trail">
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
+                <i class="fa fa-paw paw-print"></i>
             </div>
 
             <footer>
@@ -96,19 +146,42 @@
                     <h1 id="contact">Contact</h1>
                     <div class="contact-item">
                         <!-- Icône pour l'email -->
-                        <img src="document/email.png" alt="Email" class="contact-icon">
-                        <span>ellais.garcia.bzh@gmail.com</span>
+                        <a href="mailto:ellais.garcia.bzh@gmail.com" target="_blank" rel="noopener noreferrer">
+                            <img src="document/email.png" alt="Logo email" class="contact-icon">
+                            <span>ellais.garcia.bzh@gmail.com</span>
+                        </a>
                     </div>
                     <div class="contact-item">
                         <!-- Icône pour le téléphone -->
-                        <img src="document/telephone.png" alt="Téléphone" class="contact-icon">
-                        <span>07 67 29 53 81</span>
+                        <a href="tel:0767295381" target="_blank" rel="noopener noreferrer">
+                            <img src="document/telephone.png" alt="Logo telephone" class="contact-icon">
+                            <span>07 67 29 53 81</span>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <!-- Icône pour LinkedIn -->
+                        <a href="https://www.linkedin.com/in/ella%C3%AFs-garcia-43b602291/" target="_blank" rel="noopener noreferrer">
+                            <img src="document/linkedin.png" alt="Logo LinkedIn" class="contact-icon">
+                            <span>LinkedIn</span>
+                        </a>  
+                    </div>
+                    <div class="contact-item">
+                        <!-- Icône pour GitLab -->
+                         <a href="https://gitlab.com/ellais.garcia.bzh" target="_blank" rel="noopener noreferrer">
+                            <img src="document/gitlab.png" alt="Logo Gitlab" class="contact-icon">
+                            <span>GitLab</span>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <!-- Icône pour l'email -->
+                        <a href="document/CV_Ellaïs GARCIA.pdf" target="_blank" rel="noopener noreferrer">
+                            <img src="document/CV.png" alt="Logo CV" class="contact-icon">
+                            <span>CV</span>
+                        </a>
                     </div>
                 </nav>
             </footer>
             
         </main>
-        <script src="script/site.js"></script>
-
     </body>
 </html>
