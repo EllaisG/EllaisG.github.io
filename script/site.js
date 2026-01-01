@@ -1,80 +1,80 @@
-// Liste des événements
-const events = [
-  {
-      year: "Novembre 2023",
-      title: "Jeu de Wythoff",
-      description: "Jeu codé en Java et en Python. De plus, Il inclus un jeu humain-humain et humain-ordinateur.",
-      image: "../document/Jeu_De_Wythoff.jpg",
+// Données des projets
+const projects = {
+  wythoff: {
+    title: "Jeu de Wythoff",
+    date: "Novembre 2023",
+    description: "Mon premier jeu codé en Java et Python.",
+    outil: "Outils : Java, Python",
+    image: "../document/Jeu_De_Wythoff.jpg",
+    link: "https://gitlab.com/but614141/jeu-de-wythoff"
   },
-  {
-      year: "Octobre 2023 & Octobre 2024",
-      title: "SportTrack",
-      description: "Réalisation d’un site web de suivi de sport, en Octobre 2023 il y a eu le codage des pages (html/css) puis en Octobre 2024, création du site web en php puis en javascript en réutilisant les pages précédemment réalisées.",
-      image: "../document/Sporttrack.png",
+  sporttrack: {
+    title: "SportTrack",
+    date: "Octobre 2023 & Octobre 2024",
+    description: "Réalisation d'un site web de suivi de sport. En Octobre 2023, codage des pages (HTML/CSS), puis en Octobre 2024, création du site web en PHP puis en JavaScript en réutilisant les pages précédemment réalisées.",
+    outil: "Outils : HTML, CSS, PHP, Javascript",
+    image: "../document/Sporttrack.png",
+    link: "https://gitlab.com/but614141/sporttrack"
   },
-  {
-      year: "Janvier-Juin 2024",
-      title: "Commune Bretonne",
-      description: "Réalisation d'une application sur les communes bretonnes, cette application présente les facteurs d'attractivité d'une commune, notamment son nombre d'habitant, si elle possède un aéroport, etc... ",
-      image: "../document/commune_bretonne.jpg",
+  commune: {
+    title: "Commune Bretonne",
+    date: "Janvier-Juin 2024",
+    description: "Réalisation d'une application sur les communes bretonnes. Cette application présente les facteurs d'attractivité d'une commune, notamment son nombre d'habitants, si elle possède un aéroport, etc.",
+    outil: "Outils : Java, JavaFX, MySQL",
+    image: "../document/commune_bretonne.jpg",
+    link: "https://gitlab.com/but614141/commune-bretonne"
   },
-  {
-      year: "Septembre 2024 - Janvier 2025",
-      title: "Building Devis",
-      description: "Réalisation d'une application (site web, android et IOS) de prise de rendez-vous d'artisans à proximité, codé en Node.js (back-end), Ionic (front-end) et PostGreSQL (base de donnée). Toujours en cours de réalisation",
-      image: "../document/building_devis.png",
+  building: {
+    title: "Building Devis",
+    date: "Septembre 2024 - Janvier 2025",
+    description: "Réalisation d'une application (site web, Android et iOS) de prise de rendez-vous d'artisans à proximité, codée en Node.js (back-end), Ionic (front-end) et PostgreSQL (base de données). Mise en production en mai 2025 et arrêté en juillet 2025.",
+    outil: "Outils : PostgreSQL, Node.js, Ionic avec Vue.js, Gitlab",
+    image: "../document/building_devis.png",
+    link: "https://gitlab.com/but614141/building-devis"
   },
-  {
-      year: "Novembre 2024",
-      title: "Portfolio personnel",
-      description: "J'ai lancé mon projet de portfolio personnel pour présenter mes compétences et projets.",
-      image: "../document/favicon.png",
-  },
-];
+  portfolio: {
+    title: "Portfolio",
+    date: "Novembre 2024",
+    description: "J'ai lancé mon projet de portfolio personnel pour présenter mes compétences et projets.",
+    outil: "Outils : HTML, CSS, Javascript, GitHub",
+    image: "../document/favicon.png",
+    link: "https://github.com/EllaisG/EllaisG.github.io"
+  }
+};
 
-let currentIndex = 0; // Suivi de l'événement actif
-
-function updateTimeline(direction) {
-    // Vérifier si on atteint les limites
-    if ((currentIndex === 0 && direction === -1) || (currentIndex === events.length - 1 && direction === 1)) {
-        // Ne rien faire si on est au début ou à la fin
-        return;
-    }
-
-    // Mettre à jour l'index de l'événement actif
-    currentIndex += direction;
-
-    // Gérer l'élément sélectionné dans la timeline
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach(item => item.classList.remove('selected')); // Retirer la classe 'selected' de tous les événements
-
-    // Ajouter la classe 'selected' à l'événement actuel
-    const selectedItem = timelineItems[currentIndex];
-    selectedItem.classList.add('selected');
-
-    // Faire défiler la timeline pour centrer l'élément sélectionné
-    const timeline = document.querySelector('.timeline');
-    const itemWidth = selectedItem.offsetWidth;
-    const timelineWidth = timeline.offsetWidth;
-    const offset = selectedItem.offsetLeft + itemWidth / 2 - timelineWidth / 2;
-
-    timeline.scrollTo({
-        left: offset,
-        behavior: 'smooth'
+// Gestion du modal
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('project-modal');
+  const closeBtn = document.querySelector('.close');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  // Ouvre le modal au clic sur un projet
+  projectCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const projectId = this.getAttribute('data-project');
+      const project = projects[projectId];
+      
+      document.getElementById('modal-body').innerHTML = `
+        <h2>${project.title}</h2>
+        <p><img src=${project.image} class="Image-projet">
+        <p><strong>${project.date}</strong></p>
+        <p>${project.description}</p>
+        <p>${project.outil}</p>
+        <p><a href="${project.link}" target="_blank" rel="noopener noreferrer">→ Voir plus sur GitLab</a></p>
+      `;
+      
+      modal.style.display = 'block';
     });
-
-    // Mettre à jour les détails de l'événement
-    const event = events[currentIndex];
-    const detailsContainer = document.getElementById("event-details");
-    detailsContainer.innerHTML = `
-        <h3>${event.year}: ${event.title}</h3>
-        <p>${event.description}</p>
-    `;
-
-    // Mettre à jour l'image de l'événement
-    const imageElement = document.querySelector("#event-details-container img");
-    imageElement.src = event.image;
-}
-
-// Initialisation : afficher les détails du premier événement
-updateTimeline(0);
+  });
+  
+  // Ferme le modal
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+  
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
