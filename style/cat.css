@@ -9,9 +9,10 @@
 .right {float: right;}
 .cat {
   margin-top: 50px;
-  margin-bottom: -95px; /* Ajoute cette ligne - fait descendre le chat dans l'intro */
-  z-index: 10; /* Assure que le chat reste visible au-dessus */
-  position: relative; /* Nécessaire pour que z-index fonctionne */
+  margin-bottom: -95px;
+  z-index: 10;
+  position: relative;
+  contain: layout;
 }
 .head {
   width: 100px;
@@ -89,7 +90,6 @@
   border-radius: 25px;
   top: 0px;
   left: 10px;
-  /*transform: rotate(10deg);*/
   animation: tail-swish 5s infinite cubic-bezier(.8,0,.2,1);
 }
 
@@ -103,11 +103,11 @@
 }
 
 @keyframes head-bob {
-  0% {transform: translateX(-15px) translateY(45px);}   /* Tête en bas */
-  80% {transform: translateX(-15px) translateY(45px);}  /* Reste en bas longtemps */
-  85% {transform: translateX(0) translateY(0);}         /* Lève la tête rapidement */
-  95% {transform: translateX(0) translateY(0);}         /* Garde la tête levée un peu */
-  100% {transform: translateX(-15px) translateY(45px);} /* Redescend */
+  0% {transform: translateX(-15px) translateY(45px);}
+  80% {transform: translateX(-15px) translateY(45px);}
+  85% {transform: translateX(0) translateY(0);}
+  95% {transform: translateX(0) translateY(0);}
+  100% {transform: translateX(-15px) translateY(45px);}
 }
 
 @keyframes eye-blink {

@@ -17,7 +17,7 @@ const projects = {
     link: "https://gitlab.com/but614141/sporttrack"
   },
   commune: {
-    title: "Commune Bretonne",
+    title: "Communes Bretonnes",
     date: "Janvier-Juin 2024",
     description: "Réalisation d'une application sur les communes bretonnes. Cette application présente les facteurs d'attractivité d'une commune, notamment son nombre d'habitants, si elle possède un aéroport, etc.",
     outil: "Outils : Java, JavaFX, MySQL",
