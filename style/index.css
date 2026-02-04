@@ -23,6 +23,7 @@ main {
 }
 
 header {
+  isolation: isolate;
   width: 100%;
   height: 50px;
   display: flex;
@@ -88,7 +89,6 @@ header nav ul li a:hover {
   to { width: 100% }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #0B0B0A; }
@@ -99,15 +99,15 @@ header nav ul li a:hover {
   margin-bottom: 50px;
   width: 800px;
   display: flex;
-  gap: 50px; /* Espace entre les deux sections */
+  gap: 50px;
   align-items: center;
 }
 
 .presentation {
-  flex: 1; /* Prend l'espace disponible */
+  flex: 1;
   min-height: 300px;
   border-radius: 6px;
-  background-color: #0B0B0A; /* Rectangle noir */
+  background-color: #0B0B0A;
   padding: 40px;
   position: relative;
   z-index: 1;
@@ -125,13 +125,13 @@ header nav ul li a:hover {
 }
 
 .logo-3d {
-  flex: 0 0 300px; /* Largeur fixe de 300px */
+  flex: 0 0 300px;
   height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 1000px;
-  background: transparent; /* Fond transparent */
+  background: transparent;
 }
 
 .spinning-disk {
@@ -209,7 +209,6 @@ header nav ul li a:hover {
   background-color: #9B8BBD !important;
 }
 
-/* Hover pour les octogones pairs (even) */
 .mosaic div:nth-child(even):hover {
   background-color: #705D99 !important;
 }
@@ -232,7 +231,6 @@ header nav ul li a:hover {
   margin-top: 10px;
 }
 
-/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -258,8 +256,8 @@ header nav ul li a:hover {
 .modal-content img {
   display: block;
   margin: 20px auto;
-  width: 200px;  /* Largeur fixe */
-  height: auto;  /* La hauteur s'ajuste automatiquement */
+  width: 200px;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -298,7 +296,6 @@ header nav ul li a:hover {
   color: #9B8BBD;
 }
 
-/* Pattes de chat qui marchent */
 .paw-trail {
   width: 100%;
   height: 120px;
@@ -316,7 +313,6 @@ header nav ul li a:hover {
   opacity: 0;
 }
 
-/* Position fixe pour chaque patte le long de l'écran */
 .paw-print:nth-child(1) { 
   left: 5%;
   top: 30px;
@@ -397,7 +393,6 @@ header nav ul li a:hover {
   animation-delay: 2.7s;
 }
 
-/* Animation d'apparition et disparition sur place */
 @keyframes pawFade {
   0% {
     opacity: 0;
@@ -417,7 +412,6 @@ header nav ul li a:hover {
   }
 }
 
-/* Pour les pattes droites, on ajuste la rotation dans l'animation */
 .paw-print:nth-child(even) {
   animation-name: pawFadeRight;
 }
@@ -467,7 +461,7 @@ footer nav h1 {
 
 .contact-item {
   display: flex;
-  align-items: center; /* Changé de "left" à "center" */
+  align-items: center;
   margin-bottom: 5px;
   font-size: 1rem;
   color: #9B8BBD;
@@ -479,12 +473,12 @@ footer nav h1 {
 }
 
 .contact-item a {
-  text-decoration: none; /* Ajoute cette règle pour les liens */
+  text-decoration: none;
   color: #9B8BBD;
 }
 
 .contact-item a:hover {
-  color: #DBD0F0; /* Effet hover pour les liens */
+  color: #DBD0F0;
 }
 
 .contact-icon {
@@ -496,3 +490,103 @@ footer nav h1 {
 .contact-icon:hover {
   transform: scale(1.2);
 }
+
+@media screen and (max-width: 768px) {
+  header nav {
+    padding: 8px 16px;
+    isolation: isolate;
+  }
+
+  header nav ul {
+    gap: 15px;
+  }
+  
+  .cat {
+    position: relative;
+    transform: scale(0.65);
+    transform-origin: top center;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow: visible;
+    margin-top: 90px;
+    margin-bottom: 0;
+  }
+
+  .introduction {
+    max-width: 900px;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -55px;
+  }
+
+  .introduction h1 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.4;
+    border-right: none;
+    animation: none;
+  }
+
+  .presentation-wrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .logo-3d {
+    display: none;
+  }
+
+  .mosaic {
+    width: 100%;
+    align-items: center;
+  }
+
+  .mosaic div {
+    width: 90vw;
+    max-width: 350px;
+    height: 350px;
+    margin: 0;
+  }
+
+  .mosaic div:nth-child(odd),
+  .mosaic div:nth-child(even) {
+    align-self: center;
+  }
+
+  .mosaic div:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 22px;
+  }
+
+  .project-card .date {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 20% auto;
+    padding: 20px;
+  }
+
+  .paw-print:nth-child(1)  { left: 5%; }
+  .paw-print:nth-child(3)  { left: 25%; }
+  .paw-print:nth-child(4)  { left: 35%; }
+  .paw-print:nth-child(5)  { left: 45%; }
+  .paw-print:nth-child(6)  { left: 55%; }
+  .paw-print:nth-child(7)  { left: 65%; }
+  .paw-print:nth-child(8)  { left: 75%; }
+  .paw-print:nth-child(9)  { left: 85%; }
+  .paw-print:nth-child(10) { left: 95%; }
+}
+
