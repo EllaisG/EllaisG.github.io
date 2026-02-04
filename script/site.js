@@ -1,20 +1,20 @@
 // Données des projets
 const projects = {
-  wythoff: {
-    title: "Jeu de Wythoff",
-    date: "Novembre 2023",
-    description: "Mon premier jeu codé en Java et Python.",
-    outil: "Outils : Java, Python",
-    image: "../document/Jeu_De_Wythoff.jpg",
-    link: "https://gitlab.com/but614141/jeu-de-wythoff"
+  portfolio: {
+    title: "Portfolio",
+    date: "Novembre 2024",
+    description: "J'ai lancé mon projet de portfolio personnel pour présenter mes compétences et projets.",
+    outil: "Outils : HTML, CSS, Javascript, GitHub",
+    image: "../document/favicon.png",
+    link: "https://github.com/EllaisG/EllaisG.github.io"
   },
-  sporttrack: {
-    title: "SportTrack",
-    date: "Octobre 2023 & Octobre 2024",
-    description: "Réalisation d'un site web de suivi de sport. En Octobre 2023, codage des pages (HTML/CSS), puis en Octobre 2024, création du site web en PHP puis en JavaScript en réutilisant les pages précédemment réalisées.",
-    outil: "Outils : HTML, CSS, PHP, Javascript",
-    image: "../document/Sporttrack.png",
-    link: "https://gitlab.com/but614141/sporttrack"
+  building: {
+    title: "Building Devis",
+    date: "Septembre 2024 - Janvier 2025",
+    description: "Réalisation d'une application (site web) de prise de rendez-vous d'artisans à proximité, codée en Node.js (back-end), Ionic avec Vue.js (front-end) et PostgreSQL (base de données). Mise en production en mai 2025 et arrêté en juillet 2025.",
+    outil: "Outils : PostgreSQL, Node.js, Ionic avec Vue.js, Gitlab",
+    image: "../document/building_devis.png",
+    link: "https://gitlab.com/but614141/building-devis"
   },
   commune: {
     title: "Commune Bretonne",
@@ -24,21 +24,21 @@ const projects = {
     image: "../document/commune_bretonne.jpg",
     link: "https://gitlab.com/but614141/commune-bretonne"
   },
-  building: {
-    title: "Building Devis",
-    date: "Septembre 2024 - Janvier 2025",
-    description: "Réalisation d'une application (site web, Android et iOS) de prise de rendez-vous d'artisans à proximité, codée en Node.js (back-end), Ionic (front-end) et PostgreSQL (base de données). Mise en production en mai 2025 et arrêté en juillet 2025.",
-    outil: "Outils : PostgreSQL, Node.js, Ionic avec Vue.js, Gitlab",
-    image: "../document/building_devis.png",
-    link: "https://gitlab.com/but614141/building-devis"
+  sporttrack: {
+    title: "SportTrack",
+    date: "Octobre 2023 & Octobre 2024",
+    description: "Réalisation d'un site web de suivi de sport. En Octobre 2023, codage des pages (HTML/CSS), puis en Octobre 2024, création du site web en PHP puis en JavaScript en réutilisant les pages précédemment réalisées.",
+    outil: "Outils : HTML, CSS, PHP, Javascript",
+    image: "../document/Sporttrack.png",
+    link: "https://gitlab.com/but614141/sporttrack"
   },
-  portfolio: {
-    title: "Portfolio",
-    date: "Novembre 2024",
-    description: "J'ai lancé mon projet de portfolio personnel pour présenter mes compétences et projets.",
-    outil: "Outils : HTML, CSS, Javascript, GitHub",
-    image: "../document/favicon.png",
-    link: "https://github.com/EllaisG/EllaisG.github.io"
+  wythoff: {
+    title: "Jeu de Wythoff",
+    date: "Novembre 2023",
+    description: "Mon premier jeu codé en Java et Python.",
+    outil: "Outils : Java, Python",
+    image: "../document/Jeu_De_Wythoff.jpg",
+    link: "https://gitlab.com/but614141/jeu-de-wythoff"
   }
 };
 
